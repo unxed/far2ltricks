@@ -10,7 +10,7 @@
 
 far2l ppa: https://launchpad.net/~far2l-team/+archive/ubuntu/ppa
 
-Обратите также внимание на portable версию и AppImage: https://github.com/unxed/far2ltricks.git
+Обратите также внимание на portable версию и AppImage: https://github.com/spvkgn/far2l-portable/
 
 Что ещё тут есть интересного?
 
@@ -32,7 +32,7 @@ By default, far2l runs as a GUI application on wxWidgets. Console operation is a
 
 far2l ppa: https://launchpad.net/~far2l-team/+archive/ubuntu/ppa
 
-Please also pay attention to the portable version and AppImage: https://github.com/unxed/far2ltricks.git
+Please also pay attention to the portable version and AppImage: https://github.com/spvkgn/far2l-portable/
 
 What else is there interesting here?
 
