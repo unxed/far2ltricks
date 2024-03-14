@@ -18,7 +18,7 @@ colorer_smarty — улучшение поддержки Smarty в плагин�
 
 misc — всякие вспомогательные скрипты, большей частью устаревшие
 
-patches — разные полезные патчи включение по умолчанию опций «одиночное нажатие ESC» и «поддержка OSC 52», исправление буфера обмена для систем с Wayland.
+patches — разные полезные патчи: включение по умолчанию опций «одиночное нажатие ESC» и «поддержка OSC 52», исправление буфера обмена для систем с Wayland.
 
 themes — темы оформления интерфейса far2l
 
@@ -40,6 +40,6 @@ colorer_smarty - improved Smarty support in the Colorer plugin
 
 misc - all sorts of auxiliary scripts, mostly outdated
 
-patches - various useful patches enabling the “single press ESC” and “OSC 52 support” options by default, fixing the clipboard for systems with Wayland.
+patches - various useful patches: enabling the “single press ESC” and “OSC 52 support” options by default, fixing the clipboard for systems with Wayland.
 
 themes - far2l interface themes
