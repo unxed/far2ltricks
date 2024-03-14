@@ -1,0 +1,26 @@
+diff --git a/WinPort/src/Backend/WinPortMain.cpp b/WinPort/src/Backend/WinPortMain.cpp
+index acba7e81..637828ef 100644
+--- a/WinPort/src/Backend/WinPortMain.cpp
++++ b/WinPort/src/Backend/WinPortMain.cpp
+@@ -246,7 +246,7 @@ struct ArgOptions
+ 	bool tty = false, far2l_tty = false, notty = false, norgb = false;
+ 	bool mortal = false;
+ 	std::string ext_clipboard;
+-	unsigned int esc_expiration = 0;
++	unsigned int esc_expiration = 100; // by unxed: 100 by default
+ 	std::vector<char *> filtered_argv;
+ 
+ 	ArgOptions() = default;
+diff --git a/far2l/src/cfg/ConfigSaveLoad.cpp b/far2l/src/cfg/ConfigSaveLoad.cpp
+index e1ba4936..2a91ad33 100644
+--- a/far2l/src/cfg/ConfigSaveLoad.cpp
++++ b/far2l/src/cfg/ConfigSaveLoad.cpp
+@@ -266,7 +266,7 @@ public:
+ 	{true,  NSecInterface, "ExclusiveWinLeft", &Opt.ExclusiveWinLeft, 0},
+ 	{true,  NSecInterface, "ExclusiveWinRight", &Opt.ExclusiveWinRight, 0},
+ 
+-	{true,  NSecInterface, "OSC52ClipSet", &Opt.OSC52ClipSet, 0},
++	{true,  NSecInterface, "OSC52ClipSet", &Opt.OSC52ClipSet, 1}, // by unxed: enable by default
+ 	{true,  NSecInterface, "TTYPaletteOverride", &Opt.TTYPaletteOverride, 1},
+ 
+ 	{false, NSecInterface, "ShowTimeoutDelFiles", &Opt.ShowTimeoutDelFiles, 50},
