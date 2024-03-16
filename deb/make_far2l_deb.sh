@@ -3,13 +3,17 @@ sudo apt install -y fakeroot # need for build deb in step 3
 sudo apt install -y libwxgtk3.0-dev
 sudo apt install -y libwxgtk3.0-gtk3-dev
 sudo apt install -y libneon27-dev
-sudo apt-get install -y pkg-config git cmake g++ gawk m4 libuchardet-dev libxerces-c-dev libpcre3-dev libarchive-dev libssl-dev libssh-dev libsmbclient-dev libnfs-dev libx11-dev libxi-dev
+sudo apt-get install -y curl pkg-config git cmake g++ gawk m4 libuchardet-dev libxerces-c-dev libpcre3-dev libarchive-dev libssl-dev libssh-dev libsmbclient-dev libnfs-dev libx11-dev libxi-dev
 rm -rf far2l.deb far2l_`getconf LONG_BIT`.deb
 rm -rf far2l
 mkdir far2l
 sudo mount tmpfs -o size=512M -o uid=`id -u` -o gid=`id -g` -t tmpfs ./far2l
 cd far2l
 git clone https://github.com/elfmz/far2l
+# download and apply patches
+cd far2l
+wget -qO- "https://api.github.com/repos/unxed/far2ltricks/contents/patches" | grep -oP '"download_url": "\K[^"]+' | while read -r url; do wget -q "$url" && git apply "$(basename "$url")"; done
+cd ..
 ##### step 2 (add "cd far2l" below if running step 2 as separate script)
 mkdir build
 cd build
