@@ -1,4 +1,4 @@
-# far2l-deb
+# far2ltricks
 
 **Readme in english is below**
 
