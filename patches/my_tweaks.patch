@@ -1,5 +1,4 @@
 diff --git a/NetRocks/src/Op/OpXfer.cpp b/NetRocks/src/Op/OpXfer.cpp
-index 583b7508..68949f96 100644
 --- a/NetRocks/src/Op/OpXfer.cpp
 +++ b/NetRocks/src/Op/OpXfer.cpp
 @@ -350,6 +350,11 @@ void OpXfer::Transfer()

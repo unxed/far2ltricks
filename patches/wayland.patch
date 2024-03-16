@@ -1,5 +1,4 @@
 diff --git a/WinPort/src/Backend/WX/wxClipboardBackend.cpp b/WinPort/src/Backend/WX/wxClipboardBackend.cpp
-index eb3cb52f..661cb88a 100644
 --- a/WinPort/src/Backend/WX/wxClipboardBackend.cpp
 +++ b/WinPort/src/Backend/WX/wxClipboardBackend.cpp
 @@ -201,7 +201,14 @@ void *wxClipboardBackend::OnClipboardSetData(UINT format, void *data)
