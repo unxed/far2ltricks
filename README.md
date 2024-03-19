@@ -4,6 +4,11 @@
 
 Всякие полезности для файлового менеджера far2l.
 
+Главное — сам скрипт far2ltricks.sh. Он применяет всякие настройки, делающие вашу работу в far2l максимально комфортной. Запускать так:
+```
+curl -sSL https://raw.githubusercontent.com/unxed/far2ltricks/main/far2ltricks.sh > /tmp/far2ltricks.sh && bash /tmp/far2ltricks.sh && rm /tmp/far2ltricks.sh
+```
+
 Если вам нужен пакет для своего дистрибутива, можете собрать его самостоятельно, используя скрипт `deb/make_far2l_deb.sh`.
 
 По умолчанию far2l работает как GUI-приложение на wxWidgets. Также поддерживается работа в консоли, `far2l --tty`. В putty консольная версия работает с [с некоторыми ограничениями](https://github.com/elfmz/far2l/issues/472), проблема решается использованием [специальной версии putty](https://github.com/unxed/putty4far2l).
@@ -25,6 +30,11 @@ themes — темы оформления интерфейса far2l
 ---
 
 All sorts of useful things for the far2l file manager.
+
+The main thing is the far2ltricks.sh script itself. It applies all sorts of settings that make your work in far2l as comfortable as possible. Run like this:
+```
+curl -sSL https://raw.githubusercontent.com/unxed/far2ltricks/main/far2ltricks.sh > /tmp/far2ltricks.sh && bash /tmp/far2ltricks.sh && rm /tmp/far2ltricks.sh
+```
 
 If you need a package for your distribution, you can build it yourself using the `deb/make_far2l_deb.sh` script.
 
