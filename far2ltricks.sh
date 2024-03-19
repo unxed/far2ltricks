@@ -40,6 +40,19 @@ else
   fi
 fi
 #
+# trick 4: free hot keys needed for far2l
+#
+# turn off F10 usage in GNOME Terminal
+gsettings set org.gnome.Terminal.Legacy.Settings menu-accelerator-enabled false
+# turn off Alt+F2 usage to run command
+gsettings set org.gnome.desktop.wm.keybindings panel-run-dialog "[]"
+# turn off Alt+F7 and Alt+F8 for moving/resizing window
+gsettings set org.gnome.desktop.wm.keybindings begin-move "['disabled']"
+gsettings set org.gnome.desktop.wm.keybindings begin-resize "['disabled']"
+# turn off Alt+F1
+# from https://askubuntu.com/a/128745/894968
+gsettings set org.gnome.desktop.wm.keybindings panel-main-menu "[]"
+#
 # wayland-only tricks below
 #
 if [[ -z $WSL_DISTRO_NAME ]]; then
@@ -50,7 +63,7 @@ if [[ -z $WSL_DISTRO_NAME ]]; then
     exit;
 fi
 #
-# trick 4: wslg clipboard workaround
+# trick 5: wslg clipboard workaround
 #
 cat > ~/.config/far2l/getclipboard.vbs <<'EOF'
 WScript.StdOut.Write CreateObject("HTMLFile").ParentWindow.ClipboardData.GetData("Text")
