@@ -16,6 +16,8 @@ gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['']" 		# Alt+F
 #
 # same for cinnamon:
 #
+gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-up "[]"
+#
 gsettings set org.cinnamon.desktop.keybindings.wm panel-main-menu "[]" 		# Alt+F1
 gsettings set org.cinnamon.desktop.keybindings.wm panel-run-dialog "[]" 	# Alt+F2
 #gsettings set org.cinnamon.desktop.keybindings.wm close "[]" 				# Alt+F4
