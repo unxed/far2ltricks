@@ -2,7 +2,7 @@
 #
 # trick 0: kitty as default terminal emulator
 #
-#xdg-settings set default-applications/terminal exec kitty
+#sudo update-alternatives --set x-terminal-emulator /usr/bin/kitty
 #
 # trick 1: free some kitty key combinations for far2l
 #
