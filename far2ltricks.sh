@@ -1,5 +1,9 @@
 #!/bin/bash
 #
+# trick 0: kitty as default terminal emulator
+#
+#xdg-settings set default-applications/terminal exec kitty
+#
 # trick 1: free some kitty key combinations for far2l
 #
 kitty_config_dir="${HOME}/.config/kitty"
