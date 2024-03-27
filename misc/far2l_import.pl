@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 
 #use Data::Dumper qw(Dumper);
+use File::Path qw(remove_tree make_path);
 
 my $filename = shift or die "Usage: far2l_import.pl color_scheme.reg\nNeeds legacy REGEDIT4 format\n\n";
  
@@ -16,7 +17,7 @@ while(<$fh>) {
 close $fh;
 
 # reset colors
-system("rm -rf ~/.config/far2l/REG/HKU/c/k-Software/k-Far2/k-Colors");
+remove_tree($ENV{'HOME'} . "/.config/far2l/REG/HKU/c/k-Software/k-Far2/k-Colors");
 
 $param = '';
 foreach (@array) {
@@ -31,7 +32,7 @@ foreach (@array) {
         $group = substr( $group, 1, (length($group) - 2 ) );
         my @path = split /\\/, $group;
 
-        $path_str = "~/.config/far2l/REG/";
+        $path_str = $ENV{'HOME'} . "/.config/far2l/REG/";
 
         foreach (@path) {
             if ($_ eq 'HKEY_CURRENT_USER') {
@@ -46,7 +47,7 @@ foreach (@array) {
 
             $path_str .= $path_str_part;
 
-            system("mkdir -p " . $path_str);
+            make_path($path_str);
         }
 
     } elsif ($first eq '"') {
@@ -61,7 +62,7 @@ foreach (@array) {
         if ($first2 eq '"') {
             $val = substr( $val, 1, (length($val) - 2) );
 
-            open(FH, '>', $path_str . '/v-' . $param) or die $!;
+            open(FH, '>', $path_str . 'v-' . $param) or die $!;
             print FH $param . "\n";
             print FH "SZ\n";
             print FH $val . '\0' . "\n";
@@ -69,7 +70,7 @@ foreach (@array) {
         } else {
             my ($type, $value) = split /:/, $val;
             if ($type eq 'dword') {
-                open(FH, '>', $path_str . '/v-' . $param) or die $!;
+                open(FH, '>', $path_str . 'v-' . $param) or die $!;
                 print FH $param . "\n";
                 print FH "DWORD\n";
                 print FH $value . "\n";
@@ -78,7 +79,7 @@ foreach (@array) {
                 $continues = (substr($value, -1) eq '\'');
                 $value =~ tr/,/ /;
                 $value =~ tr/\\/ /;
-                open(FH, '>', $path_str . '/v-' . $param) or die $!;
+                open(FH, '>', $path_str . 'v-' . $param) or die $!;
                 print FH $param . "\n";
                 print FH "BINARY\n";
                 $value =~ s/^\s+|\s+$//g;
@@ -93,7 +94,7 @@ foreach (@array) {
         $continues = (substr($value, -1) eq '\'');
         $value =~ tr/,/ /;
         $value =~ tr/\\/ /;
-        open(FH, '>>', $path_str . '/v-' . $param) or die $!;
+        open(FH, '>>', $path_str . 'v-' . $param) or die $!;
         $value =~ s/^\s+|\s+$//g;
         print FH $value;
         if (!$continues) { print FH "\n"; }
