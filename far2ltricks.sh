@@ -59,7 +59,7 @@ fi
 #
 # trick 4: wslg clipboard workaround
 #
-cat > ~/.config/far2l/getclipboard.vbs <<'EOF'
+cat > ~/.config/far2l/wslgclip.vbs <<'EOF'
 WScript.StdOut.Write CreateObject("HTMLFile").ParentWindow.ClipboardData.GetData("Text")
 EOF
 cat > ~/.config/far2l/clipboard <<'EOF'
