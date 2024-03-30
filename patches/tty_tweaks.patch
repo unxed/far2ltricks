@@ -1,12 +1,13 @@
 diff --git a/WinPort/src/Backend/WinPortMain.cpp b/WinPort/src/Backend/WinPortMain.cpp
+index e268b3be..06630b24 100644
 --- a/WinPort/src/Backend/WinPortMain.cpp
 +++ b/WinPort/src/Backend/WinPortMain.cpp
-@@ -246,7 +246,7 @@ struct ArgOptions
- 	bool tty = false, far2l_tty = false, notty = false, norgb = false;
- 	bool mortal = false;
+@@ -255,7 +255,7 @@ struct ArgOptions
+ 	bool x11 = false;
+ 	bool wayland = false;
  	std::string ext_clipboard;
 -	unsigned int esc_expiration = 0;
-+	unsigned int esc_expiration = 100; // by unxed: 100 by default
++	unsigned int esc_expiration = 100; // by unxed
  	std::vector<char *> filtered_argv;
  
  	ArgOptions() = default;
