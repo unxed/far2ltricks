@@ -26,7 +26,6 @@ fi
 if ! grep -q "map ctrl+shift+end no_op" "${kitty_config_file}"; then
   echo "map ctrl+shift+end no_op" >> "${kitty_config_file}"
 fi
-
 if ! grep -q "enable_audio_bell no" "${kitty_config_file}"; then
   echo "enable_audio_bell no" >> "${kitty_config_file}"
 fi
