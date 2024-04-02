@@ -20,7 +20,6 @@ fi
 if ! grep -q "map ctrl+shift+left no_op" "${kitty_config_file}"; then
   echo "map ctrl+shift+left no_op" >> "${kitty_config_file}"
 fi
-
 if ! grep -q "map ctrl+shift+home no_op" "${kitty_config_file}"; then
   echo "map ctrl+shift+home no_op" >> "${kitty_config_file}"
 fi
