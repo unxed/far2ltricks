@@ -34,6 +34,8 @@ fi
 #
 if ! grep -q "FAR2L_ARGS" ~/.bashrc; then
   if [[ -n ${WAYLAND_DISPLAY} ]]; then
+    # not working!
+    # https://github.com/elfmz/far2l/issues/2139
     echo "export FAR2L_ARGS=\"--nodetect=xi --ee\"" >> ~/.bashrc
   else
     echo "export FAR2L_ARGS=\"--ee\"" >> ~/.bashrc
