@@ -62,7 +62,7 @@ else
   fi
 fi
 #
-# wayland-only tricks below
+# wsl-only tricks below
 #
 if [[ -z $WSL_DISTRO_NAME ]]; then
     #
