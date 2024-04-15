@@ -1,25 +1,26 @@
 diff --git a/WinPort/src/Backend/WinPortMain.cpp b/WinPort/src/Backend/WinPortMain.cpp
-index 1c8524ab..7a245191 100644
+index 9f94f3fe..3b80f10d 100644
 --- a/WinPort/src/Backend/WinPortMain.cpp
 +++ b/WinPort/src/Backend/WinPortMain.cpp
-@@ -259,7 +259,7 @@ struct ArgOptions
+@@ -261,7 +261,7 @@ struct ArgOptions
+ 	bool x11 = false;
  	bool wayland = false;
  	std::string ext_clipboard;
- 	std::string test_id;
 -	unsigned int esc_expiration = 0;
 +	unsigned int esc_expiration = 100; // by unxed
  	std::vector<char *> filtered_argv;
  
  	ArgOptions() = default;
 diff --git a/far2l/src/cfg/ConfigOpt.cpp b/far2l/src/cfg/ConfigOpt.cpp
+index f806644a..58fc2c92 100644
 --- a/far2l/src/cfg/ConfigOpt.cpp
 +++ b/far2l/src/cfg/ConfigOpt.cpp
-@@ -158,7 +158,7 @@ const ConfigOpt g_cfg_opts[] {
+@@ -162,7 +162,7 @@ const ConfigOpt g_cfg_opts[] {
  	{true,  NSecInterface, "ExclusiveWinLeft", &Opt.ExclusiveWinLeft, 0},
  	{true,  NSecInterface, "ExclusiveWinRight", &Opt.ExclusiveWinRight, 0},
  
 -	{true,  NSecInterface, "OSC52ClipSet", &Opt.OSC52ClipSet, 0},
-+	{true,  NSecInterface, "OSC52ClipSet", &Opt.OSC52ClipSet, 1}, // by unxed: enable by default
++	{true,  NSecInterface, "OSC52ClipSet", &Opt.OSC52ClipSet, 1}, // by unxed
  	{true,  NSecInterface, "TTYPaletteOverride", &Opt.TTYPaletteOverride, 1},
  
  	{false, NSecInterface, "ShowTimeoutDelFiles", &Opt.ShowTimeoutDelFiles, 50},
