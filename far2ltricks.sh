@@ -48,9 +48,13 @@ fi
 #
 # trick 4: enable --ee option by default
 #
-if ! grep -q "FAR2L_ARGS" ~/.bashrc; then
-  echo "export FAR2L_ARGS=\"--ee\"" >> ~/.bashrc
-fi
+# actually, not needed: under x11 esc key is processed via ttyxi,
+# under wayland either it's ubuntu 24.04 version with no support for --ee in FAR2L_ARGS
+# or more fresh distro having far2l version with --ee enabled under wayland by default
+#
+#if ! grep -q "FAR2L_ARGS" ~/.bashrc; then
+#  echo "export FAR2L_ARGS=\"--ee\"" >> ~/.bashrc
+#fi
 #
 # trick 4: enable osc52
 #
