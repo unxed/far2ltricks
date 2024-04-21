@@ -16,4 +16,5 @@ if [ -f "/usr/lib/far2l/far2l_ttyx.broker" ]; then
 else
     echo -e "\e[91mОШИБКА: файл не существует.\e[0m"
 fi
+echo "Нажмите любую клавишу..."
 read
