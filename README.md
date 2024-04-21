@@ -14,6 +14,11 @@ curl -sSL https://raw.githubusercontent.com/unxed/far2ltricks/main/far2ltricks.s
 curl -sSL https://raw.githubusercontent.com/unxed/far2ltricks/main/far2lkeys.sh > /tmp/far2lkeys.sh && bash /tmp/far2lkeys.sh && rm /tmp/far2lkeys.sh
 ```
 
+Исправление проблемы с задержками ввода на Ubuntu 24.04:
+```
+curl -sSL https://raw.githubusercontent.com/unxed/far2ltricks/main/misc/24_04_fix.sh > /tmp/24_04_fix.sh && bash /tmp/24_04_fix.sh && rm /tmp/24_04_fix.sh
+```
+
 Если вам нужен пакет для своего дистрибутива, можете собрать его самостоятельно, используя скрипт `deb/make_far2l_deb.sh`.
 
 По умолчанию far2l работает как GUI-приложение на wxWidgets. Также поддерживается работа в консоли, `far2l --tty`. В putty консольная версия работает с [с некоторыми ограничениями](https://github.com/elfmz/far2l/issues/472), проблема решается использованием [специальной версии putty](https://github.com/unxed/putty4far2l).
@@ -44,6 +49,11 @@ curl -sSL https://raw.githubusercontent.com/unxed/far2ltricks/main/far2ltricks.s
 Freeing up necessary far2l hotkeys occupied by some DEs:
 ```
 curl -sSL https://raw.githubusercontent.com/unxed/far2ltricks/main/far2lkeys.sh > /tmp/far2lkeys.sh && bash /tmp/far2lkeys.sh && rm /tmp/far2lkeys.sh
+```
+
+Fixing input lag issue on Ubuntu 24.04:
+```
+curl -sSL https://raw.githubusercontent.com/unxed/far2ltricks/main/misc/24_04_fix.sh > /tmp/24_04_fix.sh && bash /tmp/24_04_fix.sh && rm /tmp/24_04_fix.sh
 ```
 
 If you need a package for your distribution, you can build it yourself using the `deb/make_far2l_deb.sh` script.
