@@ -32,24 +32,27 @@ fi
 #
 # trick 2: wayland tty input delays workaround
 #
-if ! grep -q "FAR2L_ARGS" ~/.bashrc; then
-  if [[ -n ${WAYLAND_DISPLAY} ]]; then
-    echo "export FAR2L_ARGS=\"--nodetect=xi --ee\"" >> ~/.bashrc
-    # not working!
-    # see https://github.com/elfmz/far2l/issues/2139
-    #
-    # applying workaround
-    echo
-    echo "To work around input bug under Wayland I need to patch /usr/lib/far2l/far2l_ttyx.broker"
-    echo "Для решения проблемы с багом ввода под Wayland мне нужно пропатчить /usr/lib/far2l/far2l_ttyx.broker"
-    echo
-    sudo perl -pi -e 's/XInputExtension/!InputExtension/g' /usr/lib/far2l/far2l_ttyx.broker
-  else
-    echo "export FAR2L_ARGS=\"--ee\"" >> ~/.bashrc
-  fi
+if [[ -n ${WAYLAND_DISPLAY} ]]; then
+  # 
+  # see
+  # https://github.com/elfmz/far2l/issues/2041
+  # https://github.com/elfmz/far2l/issues/2139
+  # applying workaround
+  #
+  echo
+  echo "To work around input bug under Wayland I need to patch /usr/lib/far2l/far2l_ttyx.broker"
+  echo "Для решения проблемы с багом ввода под Wayland мне нужно пропатчить /usr/lib/far2l/far2l_ttyx.broker"
+  echo
+  sudo perl -pi -e 's/XInputExtension/!InputExtension/g' /usr/lib/far2l/far2l_ttyx.broker
 fi
 #
-# trick 3: enable osc52
+# trick 4: enable --ee option by default
+#
+if ! grep -q "FAR2L_ARGS" ~/.bashrc; then
+  echo "export FAR2L_ARGS=\"--ee\"" >> ~/.bashrc
+fi
+#
+# trick 4: enable osc52
 #
 config_file="$HOME/.config/far2l/settings/config.ini"
 if [ ! -f "$config_file" ]; then
@@ -72,7 +75,7 @@ if [[ -z $WSL_DISTRO_NAME ]]; then
     exit;
 fi
 #
-# trick 4: wslg clipboard workaround
+# trick 5: wslg clipboard workaround
 #
 cat > ~/.config/far2l/getclipboard.vbs <<'EOF'
 WScript.StdOut.Write CreateObject("HTMLFile").ParentWindow.ClipboardData.GetData("Text")
