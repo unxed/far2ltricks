@@ -1,5 +1,4 @@
 diff --git a/WinPort/src/Backend/WinPortMain.cpp b/WinPort/src/Backend/WinPortMain.cpp
-index 9f94f3fe..3b80f10d 100644
 --- a/WinPort/src/Backend/WinPortMain.cpp
 +++ b/WinPort/src/Backend/WinPortMain.cpp
 @@ -261,7 +261,7 @@ struct ArgOptions
@@ -12,12 +11,11 @@ index 9f94f3fe..3b80f10d 100644
  
  	ArgOptions() = default;
 diff --git a/far2l/src/cfg/ConfigOpt.cpp b/far2l/src/cfg/ConfigOpt.cpp
-index f806644a..58fc2c92 100644
 --- a/far2l/src/cfg/ConfigOpt.cpp
 +++ b/far2l/src/cfg/ConfigOpt.cpp
-@@ -162,7 +162,7 @@ const ConfigOpt g_cfg_opts[] {
- 	{true,  NSecInterface, "ExclusiveWinLeft", &Opt.ExclusiveWinLeft, 0},
- 	{true,  NSecInterface, "ExclusiveWinRight", &Opt.ExclusiveWinRight, 0},
+@@ -167,7 +167,7 @@ const ConfigOpt g_cfg_opts[] {
+ 	{true,  NSecInterface, "TimeSeparator", &Opt.strTimeSeparator, GetTimeSeparatorDefaultStr()},
+ 	{true,  NSecInterface, "DecimalSeparator", &Opt.strDecimalSeparator, GetDecimalSeparatorDefaultStr()},
  
 -	{true,  NSecInterface, "OSC52ClipSet", &Opt.OSC52ClipSet, 0},
 +	{true,  NSecInterface, "OSC52ClipSet", &Opt.OSC52ClipSet, 1}, // by unxed
