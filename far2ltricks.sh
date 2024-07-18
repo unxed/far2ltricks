@@ -30,32 +30,6 @@ if ! grep -q "enable_audio_bell no" "${kitty_config_file}"; then
   echo "enable_audio_bell no" >> "${kitty_config_file}"
 fi
 #
-# trick 2: wayland tty input delays workaround
-#
-#if [[ -n ${WAYLAND_DISPLAY} ]]; then
-  # 
-  # see
-  # https://github.com/elfmz/far2l/issues/2041
-  # https://github.com/elfmz/far2l/issues/2139
-  # applying workaround
-  #
-  #echo
-  #echo "To work around input bug under Wayland I need to patch /usr/lib/far2l/far2l_ttyx.broker"
-  #echo "Для решения проблемы с багом ввода под Wayland мне нужно пропатчить /usr/lib/far2l/far2l_ttyx.broker"
-  #echo
-  #sudo perl -pi -e 's/XInputExtension/!InputExtension/g' /usr/lib/far2l/far2l_ttyx.broker
-#fi
-#
-# trick 4: enable --ee option by default
-#
-# actually, not needed: under x11 esc key is processed via ttyxi,
-# under wayland either it's ubuntu 24.04 version with no support for --ee in FAR2L_ARGS
-# or more fresh distro having far2l version with --ee enabled under wayland by default
-#
-#if ! grep -q "FAR2L_ARGS" ~/.bashrc; then
-#  echo "export FAR2L_ARGS=\"--ee\"" >> ~/.bashrc
-#fi
-#
 # trick 4: enable osc52
 #
 config_file="$HOME/.config/far2l/settings/config.ini"
