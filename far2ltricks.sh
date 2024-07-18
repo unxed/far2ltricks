@@ -32,19 +32,19 @@ fi
 #
 # trick 2: wayland tty input delays workaround
 #
-if [[ -n ${WAYLAND_DISPLAY} ]]; then
+#if [[ -n ${WAYLAND_DISPLAY} ]]; then
   # 
   # see
   # https://github.com/elfmz/far2l/issues/2041
   # https://github.com/elfmz/far2l/issues/2139
   # applying workaround
   #
-  echo
-  echo "To work around input bug under Wayland I need to patch /usr/lib/far2l/far2l_ttyx.broker"
-  echo "Для решения проблемы с багом ввода под Wayland мне нужно пропатчить /usr/lib/far2l/far2l_ttyx.broker"
-  echo
-  sudo perl -pi -e 's/XInputExtension/!InputExtension/g' /usr/lib/far2l/far2l_ttyx.broker
-fi
+  #echo
+  #echo "To work around input bug under Wayland I need to patch /usr/lib/far2l/far2l_ttyx.broker"
+  #echo "Для решения проблемы с багом ввода под Wayland мне нужно пропатчить /usr/lib/far2l/far2l_ttyx.broker"
+  #echo
+  #sudo perl -pi -e 's/XInputExtension/!InputExtension/g' /usr/lib/far2l/far2l_ttyx.broker
+#fi
 #
 # trick 4: enable --ee option by default
 #
