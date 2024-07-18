@@ -69,46 +69,6 @@ else
   fi
 fi
 #
-# wsl-only tricks below
-#
-if [[ -z $WSL_DISTRO_NAME ]]; then
-    #
-    # kill all far2l's so they can not replace updated config
-    #
-    killall far2l
-    exit;
-fi
-#
-# trick 5: wslg clipboard workaround
-#
-cat > ~/.config/far2l/getclipboard.vbs <<'EOF'
-WScript.StdOut.Write CreateObject("HTMLFile").ParentWindow.ClipboardData.GetData("Text")
-EOF
-cat > ~/.config/far2l/clipboard <<'EOF'
-script_path=$(dirname "$(readlink -f "$0")")
-
-case "$1" in
-get)
-    if command -v cscript.exe >/dev/null 2>&1; then
-        cscript.exe //Nologo $(wslpath -w "$script_path"/wslgclip.vbs)
-    else
-        powershell.exe -Command Get-Clipboard
-    fi
-
-;;
-set)
-    CONTENT=$(cat)
-    echo "$CONTENT" | clip.exe
-    echo "$CONTENT"
-;;
-"")
-    (far2l --clipboard=$(readlink -f $0) >/dev/null 2>&1 &)
-;;
-esac
-
-EOF
-chmod +x ~/.config/far2l/clipboard
-#
 # kill all far2l's so they can not replace updated config
 #
 killall far2l
