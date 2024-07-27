@@ -1,5 +1,6 @@
 #!/bin/bash
 sudo apt install -y fakeroot # need for build deb in step 3
+sudo apt install -y libwxgtk3.2-dev
 sudo apt install -y libwxgtk3.0-dev
 sudo apt install -y libwxgtk3.0-gtk3-dev
 sudo apt install -y libneon27-dev
