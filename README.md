@@ -9,15 +9,7 @@
 curl -sSL https://raw.githubusercontent.com/unxed/far2ltricks/main/far2ltricks.sh > /tmp/far2ltricks.sh && bash /tmp/far2ltricks.sh && rm /tmp/far2ltricks.sh
 ```
 
-Освобождение необходимых far2l горячих клавиш, занимаемых некоторыми DE:
-```
-curl -sSL https://raw.githubusercontent.com/unxed/far2ltricks/main/far2lkeys.sh > /tmp/far2lkeys.sh && bash /tmp/far2lkeys.sh && rm /tmp/far2lkeys.sh
-```
-
-Исправление проблемы с задержками ввода на Ubuntu 24.04:
-```
-curl -sSL https://raw.githubusercontent.com/unxed/far2ltricks/main/misc/24_04_fix.sh > /tmp/24_04_fix.sh && bash /tmp/24_04_fix.sh && rm /tmp/24_04_fix.sh
-```
+Если вас интересует освобождение необходимых far2l горячих клавиш, занимаемых некоторыми DE и терминалами, изучите скрипты-примеры в папке unbindkeys.
 
 Если вам нужен пакет для своего дистрибутива, можете собрать его самостоятельно, используя скрипт `deb/make_far2l_deb.sh`.
 
@@ -46,15 +38,7 @@ The main thing is the far2ltricks.sh script itself. It applies all sorts of sett
 curl -sSL https://raw.githubusercontent.com/unxed/far2ltricks/main/far2ltricks.sh > /tmp/far2ltricks.sh && bash /tmp/far2ltricks.sh && rm /tmp/far2ltricks.sh
 ```
 
-Freeing up necessary far2l hotkeys occupied by some DEs:
-```
-curl -sSL https://raw.githubusercontent.com/unxed/far2ltricks/main/far2lkeys.sh > /tmp/far2lkeys.sh && bash /tmp/far2lkeys.sh && rm /tmp/far2lkeys.sh
-```
-
-Fixing input lag issue on Ubuntu 24.04:
-```
-curl -sSL https://raw.githubusercontent.com/unxed/far2ltricks/main/misc/24_04_fix.sh > /tmp/24_04_fix.sh && bash /tmp/24_04_fix.sh && rm /tmp/24_04_fix.sh
-```
+If you are interested in freeing up the necessary far2l hotkeys occupied by some DEs and terminals, check out the example scripts in the unbindkeys folder.
 
 If you need a package for your distribution, you can build it yourself using the `deb/make_far2l_deb.sh` script.
 
