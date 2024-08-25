@@ -4,7 +4,7 @@ sudo apt install -y libwxgtk3.2-dev
 sudo apt install -y libwxgtk3.0-dev
 sudo apt install -y libwxgtk3.0-gtk3-dev
 sudo apt install -y libneon27-dev
-sudo apt-get install -y curl pkg-config git cmake g++ gawk m4 libuchardet-dev libxerces-c-dev libpcre3-dev libarchive-dev libssl-dev libssh-dev libsmbclient-dev libnfs-dev libx11-dev libxi-dev
+sudo apt-get install -y curl pkg-config git cmake g++ gawk m4 libuchardet-dev libxml2-dev libpcre3-dev libarchive-dev libssl-dev libssh-dev libsmbclient-dev libnfs-dev libx11-dev libxi-dev
 rm -rf far2l.deb far2l_`getconf LONG_BIT`.deb
 rm -rf far2l
 mkdir far2l
@@ -46,7 +46,7 @@ fi
 echo "Architecture: $DEB_ARCH" >> deb/far2l/DEBIAN/control
 echo "Maintainer: root <root@localhost>" >> deb/far2l/DEBIAN/control
 echo "Priority: extra" >> deb/far2l/DEBIAN/control
-echo "Depends: libwxgtk3.0-dev | libwxgtk3.0-gtk3-dev, libuchardet-dev, libpcre3-dev, libarchive-dev, libxerces-c-dev, libssl-dev, libssh-dev, libsmbclient-dev, libnfs-dev, libneon27-dev, libx11-dev, libxi-dev" >> deb/far2l/DEBIAN/control
+echo "Depends: libwxgtk3.0-dev | libwxgtk3.0-gtk3-dev, libuchardet-dev, libpcre3-dev, libarchive-dev, libxml2-dev, libssl-dev, libssh-dev, libsmbclient-dev, libnfs-dev, libneon27-dev, libx11-dev, libxi-dev" >> deb/far2l/DEBIAN/control
 echo "Description: Linux port of FAR v2" >> deb/far2l/DEBIAN/control
 echo " https://github.com/elfmz/far2l" >> deb/far2l/DEBIAN/control
 echo " ." >> deb/far2l/DEBIAN/control
