@@ -6,6 +6,8 @@ gsettings set org.gnome.Terminal.Legacy.Settings menu-accelerator-enabled false
 #
 # turn off some gnome wm-specific hot keys
 #
+gsettings set org.gnome.desktop.wm.keybindings activate-window-menu "[]"	# Alt+Space
+#
 gsettings set org.gnome.desktop.wm.keybindings panel-main-menu "[]" 		# Alt+F1
 gsettings set org.gnome.desktop.wm.keybindings panel-run-dialog "[]" 		# Alt+F2
 #gsettings set org.gnome.desktop.wm.keybindings close "[]" 					# Alt+F4
