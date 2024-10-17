@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hrc PUBLIC "-//Cail Lomecb//DTD Colorer HRC take5//EN"
     "http://colorer.sf.net/2003/hrc.dtd">
 <hrc version="take5" xmlns="http://colorer.sf.net/2003/hrc"
@@ -28,8 +28,35 @@
 		<region name="OpenTag"   parent="asp:OpenTag"/>
 		<region name="CloseTag"  parent="asp:CloseTag"/>
 
-		<scheme name="smartyEscape">
-			<regexp match="/\x20[\{\}]\x20/" region="def:Text"/>
+		<scheme name="smartyEscape1">
+			<regexp match="/\{$/" region="def:Text" />
+		</scheme>
+		<scheme name="smartyEscape2">
+			<regexp match="/\{\s/" region="def:Text"/>
+		</scheme>
+		<scheme name="smartyEscape3">
+			<regexp match="/\}$/" region="def:Text"/>
+		</scheme>
+		<scheme name="smartyEscape4">
+			<regexp match="/\s\}/" region="def:Text"/>
+		</scheme>
+		<scheme name="smartyEscape5">
+			<regexp match="/;$/" region="def:Text"/>
+		</scheme>
+		<scheme name="smartyEscape6">
+			<regexp match="/;\s/" region="def:Text"/>
+		</scheme>
+		<scheme name="smartyEscape7">
+			<regexp match="/;\}/" region="def:Text"/>
+		</scheme>
+		<scheme name="smartyEscape8">
+			<regexp match="/^\}/" region="def:Text"/>
+		</scheme>
+		<scheme name="smartyEscape9">
+			<regexp match="/\s@/" region="def:Text"/>
+		</scheme>
+		<scheme name="smartyEscapeA">
+			<regexp match="/\{\x20?\}/" region="def:Text"/>
 		</scheme>
 		<scheme name="smartyCommentInner">
 			<block start="/\{\*/" end="/\*\}/"
@@ -232,7 +259,7 @@
 		</scheme>
 
 		<scheme name="Script">
-			<block start="/\s*\b((block|capture|function|for\b|nocache|setfilter|strip|while))\b/" end="/(\/\Y2)/"
+			<block start="/\s*\b((block|capture|function|for\b|literal|nocache|setfilter|strip|while))\b/" end="/(\/\Y2)/"
 				region01="PairStart"   region10="PairEnd"
 				region02="def:Keyword" region11="def:Keyword"
 				scheme="Script" priority="low"
@@ -280,18 +307,20 @@
 		</scheme>
 
 		<scheme name="Insertion">
-			<!--<inherit scheme="smartyEscape" />-->
-			<block start="/(\{)((literal))(\})/" end="/(\{)((\/literal))(\})/"
-				region01="OpenTag"   region11="OpenTag"
-				region02="def:PairStart" region12="def:PairEnd"
-                                region04="OpenTag"   region14="OpenTag"
-				region03="def:Keyword"   region13="def:Keyword"
-				scheme="asp:html" priority="normal"  content-priority="normal"
-			/>
+			<inherit scheme="smartyEscapeA" />
+			<inherit scheme="smartyEscape1" />
+			<inherit scheme="smartyEscape2" />
+			<inherit scheme="smartyEscape3" />
+			<inherit scheme="smartyEscape4" />
+			<inherit scheme="smartyEscape5" />
+			<inherit scheme="smartyEscape6" />
+			<inherit scheme="smartyEscape7" />
+			<inherit scheme="smartyEscape8" />
+			<inherit scheme="smartyEscape9" />
 			<inherit scheme="smartyComment" />
 			<inherit scheme="smartyPhpInsertion"/>
 
-			<block start="/(\{)\M[^\s]/" end="/(\})/" 
+			<block start="/(\{)/" end="/(\})/"
 				priority="low" content-priority="low"
 				scheme="smartyScript" region="Insertion" 
 				region00="OpenTag" region10="OpenTag" 
@@ -299,7 +328,7 @@
 		</scheme>
 
 		<scheme name="InverseInsertion">
-			<block start="/(\})/" end="/(\{)\M\S/" scheme="html"
+			<block start="/(\})/" end="/(\{)/" scheme="html"
 				priority="low" region="Text" inner-region="yes"
 				region00="Insertion" region10="Insertion" 
 				region01="OpenTag"   region11="OpenTag" 
