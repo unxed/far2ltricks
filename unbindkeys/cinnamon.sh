@@ -7,6 +7,7 @@ gsettings set org.gnome.Terminal.Legacy.Settings menu-accelerator-enabled false
 # for cinnamon:
 #
 gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-up "[]"
+gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-down "[]"
 #
 gsettings set org.cinnamon.desktop.keybindings.wm activate-window-menu "[]" # Alt+Space
 #
