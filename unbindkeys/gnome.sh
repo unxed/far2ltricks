@@ -16,3 +16,6 @@ gsettings set org.gnome.desktop.wm.keybindings cycle-group "[]" 			# Alt+F6
 gsettings set org.gnome.desktop.wm.keybindings begin-move "['disabled']" 	# Alt+F7
 gsettings set org.gnome.desktop.wm.keybindings begin-resize "['disabled']" 	# Alt+F8
 #gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['']" 	# Alt+F10
+#
+# manual config: dconf-editor org.gnome.desktop.wm.keybindings
+#
